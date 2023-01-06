@@ -1,0 +1,207 @@
+午前 09:11 2023/01/06
+설명서를 제대로 읽고 이해하자. 기본적인 설명은 다 적혀있다. 내가 안 볼 뿐이다. 혹은 보고도 이해를 못하거나.
+잘 모르겠을 때는 왜를 생각한다
+git을 왜 쓰는가?
+1. 협업할 때, 같은 소스를 가지고 여러 사람이 수정하잖아. 누가 언제 어떤 부분을 수정했는지 확인하고 어떤 쪽을 사용할 지 비교해서 고를 수 있다.
+2. 로컬이 아니라 리모트로 저장하면, 어디서든지 클론만 받으면 리소스에 접근할 수 있잖아.
+그러면 git init는 무슨 역할이야? -> 1번의 요구사항 같은 소스를 가지고 작업할 때 그 소스를 어디다 두겠다고 설정하는 거지  -> 웹상의 레포지토리를 Clone으로 받아올 수 있어
+그러면 init 안하면 못받아?  아니야... 받을 수 있어...허허 뭐지? 뭐가 git init야
+
+clone의 사용법은 알겠다. 
+add *도 알겠고 
+commit 도 알겠고
+push origin(클론한 레포지토리의 이름의 대신 쓰는 것 ex SpringCore레포지토리 주소 ) main/master or branchName
+bigpond4932의 auth token : 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 
+.git의 git Config에 어떤 레포지토리로 가는 지, 깃의 설정정보가 다 들어있다.
+
+git init -> git add remote
+
+１．GitにSpringbootFolderをアップロードする　（30分）　９時５０分 -> 10시 34분 아직 완료 못했음.
+２．パート２（１時間）できた（O)　　パート３（３時間）セクション３まで進む　午後２時まで　→できなかった（X)
+2－1．翻訳25ページ
+３．セクション４（３時間）
+
+나의 스프링코어 폴더를 git으로 관리하고 싶다. 
+-> 나의 core라는 로컬 저장소에 저장된 폴더를 git에서 관리하고 싶다.
+
+gitConfig
+name = hong
+email = hongyt@ais-info.co.jp 에 id email 정보가 저장되어 있다. 나는 쓴 적이 없는데? 설정할 때 썼었나?
+
+２．パート２（１時間）できた（O)　　パート３（３時間）セクション３まで進む　午後２時まで　→できなかった
+DIP違反、MemberServiceImplがMemberRepository（インターフェース）だけではなくMemberRepositoryImpl（具現）の参照している。
+クラスダイアグラムとオブジェクトダイアグラム
+オブジェクト指向　객체
+
+전혀 변경할 이유가 없는 코드들은 인터페이스를 사용하지 않습니다.　変わる可能性がないならインターフェースを使って抽象化(abstraction)する必要はない
+
+！！
+MemoryMemberRepository 내 store 변수는 static 키워드가 붙어 있습니다.
+
+static 키워드가 붙음에 따라 MemoryMemberRepository 인스턴스들은 해당 변수를 공유하게 됩니다.
+
+OrderService와 MemberService의 MemoryMemberRepository 인스턴스는 같은 인스턴스는 아니지만, static 키워드가 붙음에 따라 해당 변수를 공유하게 된다.
+！！
+원시형 long 써도 되는데 얘는 Wrapper 타입 Long과 비교하여 Null처리가 안 된다.
+
+javaCodeでテストすることを単位テストという。
+
+翻訳を先に行う　ー＞　２５ページ２時間！！
+ー－－－－－－－
+３．セクション４（３時間）
+
+
+git init 로 .git 파일을 생성한다. -> 여기가 니가 관리할 곳이야. 라고 알려주는 것? -> 근데 gitLab하고 gitbub계정 두 개인데 만약에 git commit/push을 하게되면 어디로 파일이 올라가는 거지?
+Start
+clone 레포지토리를 디렉토리에 복제
+init 새로운 빈 깃 레포지토리 생성 또는 초기화 존재하는 것을
+
+change
+add add file contents to index 추가
+mv Move or rename a file 이동
+restore  저장
+rm remove file 삭제
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository 레포지토리에서 refs, objects를 다운로드
+   pull      Fetch from and integrate with another repository or a local branch 패치,통합 다른 레포지토리 혹은 로컬 브랜치
+   push      Update remote refs along with associated objects 원격 저장소에 업데이트 뭘? 협업하는 오브젝트들을
+
+
+========================================
+Authencation 인증 -> 로그인
+Authoriztion 인가  -> 권한
+
+4xx 쪽은 무조건 클라이언트 쪽
+
+5xx 에러는 정말 서버에 오류가 있을 때 ex> NullpointException, Server Down 등
+비지니스 로직의 예외는 다른 http 상태코드로 막아야 한다.
+
+https://www.apple.com/jp/store?afid=p238%7CsKSMckWTz-dc_mtid_18707vxu38484_pcrid_642743509090_pgrid_13140806301_pntwk_g_pchan__pexid__&cid=aos-jp-kwgo-brand--slid---product-
+
+Content Negotiation
+accept 클라이언트가 선호하는 미디어 타입 전달.
+
+ : q -> 우선순위
+협상 헤더는 리퀘스트 시에만 전송
+
+ORIGIN서버 실제로 나의 요청이 도달하는 곳, 나의 표현 데이터를 만들어주는 곳 (응답)에서 사용
+PROXY서버 
+
+서버입장에서 홍길동이 보낸 요청인지 구분할 수 있는 방법이 없다. -> stateless 프로토콜이기 때문에(요청 응답 주고 받으면 끊어)
+
+세션과 쿠키는 뭐가 다른 것이야.
+Set-Cookie user는 홍길동.. 만들어서 보낸다.
+웹브라우저 내에는 쿠키 저장소가 있다.
+
+사용자 로그인 세션관리
+GMT
+
+쿠키 - 로그인세션관리, 광고트레킹 등에 사용
+생명주기 
+도메인 필터링 -> ~만 가능
+경로 -> 
+보안 Secure(Https만),  XSS공격 방지 HTTPOnly, SameSite -> XSRF공격 방지 요청 도메인과 쿠키에 설정된 도메인이 같은 경우에만 쿠키 전송
+
+TODO
+1. 문자열을 입력받는다.
+2. 문자열을 분석해서 enter키 있는 부분을 찾는다.
+3. enter키를 space바로 치환한다.
+
+조금 있으면 점심시간이다.
+맛있는
+밥을 먹을 수 있겠
+다 진짜 맛있는 마파 
+두부
+hash라이브러리 hash가 뭐냐? 해쉬포테이토?
+
+Etag:aaaaa ->fail -> redirect
+304 Not Modified 
+
+검증 헤더(Vaildator)와  Etag, Last-Modified-Since...
+
+조건부 요청 
+if not modified since ~: Last-Modified 면 새로 받아오기 no 로컬 캐시저장소로 리다이렉트
+If match, if-None-Match: Etag
+..제어 ETag,If-None-Match
+
+프록시 캐시 서버(속도.) AWS 클라우드 프론트 CDN서비스
+프록시 서버는 클라이언트가 자신을 통해서 다른 네트워크 서비스에 간접적으로 접속할 수 있게 해 주는 컴퓨터 시스템이나 응용 프로그램을 가리킨다. 
+중계서버
+proxy 代理(人)の
+
+Cache-Control : no-cache, no-store, must-revalidate!!
+
+IP	인터넷 규약 통신약속 IP주소를 부여하고 패킷이라는 통신 단위로 데이터 전달 (노드->노드->노드->... ->도착)
+TCP	서버와 핸드쉐이킹 하고 연결이 확실히 되면 보내기 
+UDP 	그냥 뿌려~
+PORT	여러 네트워크 요청이나 데이터가 들어올 때 어디로 받을지 (해당 데이터를 처리하는 식당은 몇 층에 있는지)
+DNS	ip주소는 기억하기 어렵잖아.  도메인 이름으로 검색하면 해당 ip주소로 매핑해주는 서비스 (ip가 바뀌어도 리다이렉트 가능)
+
+URL 	자원(리소스)을 식별할 수 있는 식별자 (URI, UR??)
+웹 브라우저의 요청 흐름 		핸드쉐이크->서버동작하니?->응->요청->응답
+모든 것이 HTTP		HTTP로 모든 것을 보낼 수 있다. 텍스트, 이미지, html, JSON,XML, 파일, 동영상 등등
+클라이언트 서버 구조	Stateless, connectionless 서버자원을 아끼기, 요청증가시 수평확장 가능하기 위해 Stateless 요청헤더에 
+Context를 담아서 전송
+HTTP 메세지	??
+HTTP 메서드
+HTTP		GET 단순조회 POST 신(DB에 변화를 주기, 노출되면 안되는 정보) PUT(삭제하고 교체) PATCH(해당 부분만 교체) DELETE
+HTTP메소드활용	클라->서버로 데이터 전송 
+API설계 리소스에 집중해서! GET,POST를 붙인다. -> 도저히 HTTP  메소드로 안될 시에 Control-URL을 붙여서 관리
+HTTP 상태코드
+200 성공 201? create로 생성된 리소스의 주소가 적혀있음
+300 리다이렉트(보통 로케이션이 적혀있음 )
+400 클라오류
+500 서버오류
+
+WebServer는 도대체 뭐길래 내장을 하냐.
+스프링부트야 고맙다~
+Spring
+1. DI컨테이너
+2. 프레임워크
+3. 스프링생태계
+핵심 컨셉은 뭐냐 
+좋은 객체 지향 애플리케이션을 개발할 수 있도록 도와주는 프레임워크 -> 객체지향을 잘 할 수 있게 도와주는 도구다.
+좋은 객체 지향이 뭘까? Object를 만들어서 Object끼리의 상호작용을 통해 프로그래밍을 한다.
+프로그래밍을 한다? 이게 무슨말임?
+클래스가 없다고 가정을 하면, 코드가 무진장 더러워지고 복잡해졌지, 결과적으로 보기도 싫어졌음. (ex>페이징 작업할 때.)
+
+그런데 (기능, 처리할 데이터 별로)클래스를 작성해서 클래스를 인스턴스화하고, 각 클래스가 보유한 매소드나 필드값을 이용해서 코드를 작성하면, 
+훨씬 깔끔하고 보기쉽고, 이해하기 쉬운 코드를 작성할 수가 있지. 그래서 객체지향이 좋은 것이야.
+WEB개발 할 때에 서비스, 매퍼(DB접근), 뷰, 리소스객체 MVC로 나눠서 개발하니까 각각의 기능을 한 눈에 보고 이해할 수 있었지.
+--> 
+부품화(컴포넌트를 쉽고 유연하게 변경)-- 다형성 Polymorpism
+역할(자동차)과 구현(k3,아반떼,테슬라)으로 세상을 구분 -> 구현체가 바뀌어도 클라이언트에게 영향이 없다.
+
+객체의 협력이라는 관계부터 시작
+클라이언트를 변경하지 않고 서버의 구현기능을 유연하게 변경할 수 있다.
+ 
+객체는 각각의 특징(필드, 메소드)를 가지고 있다. 
+클래스는 붕어빵 틀이고 인스턴스는 붕어빵이다.
+
+인터페이스(역할)를 잘 설계하는 것에 정말 중요하다.
+객체지향 equal 다형성!!
+
+-----------------
+SOLID 클린코드 Principle 
+SRP Single Responsibility 책임이 있냐 없냐 -> 변경 시 변경점이 많은가 적은가. 
+OCP Open Closed 확장에는 열려있으나 변경에는 닫혀있다.-> 다형성을 이용했으나 변경이 필요하다, -> Spring Container가 해결해준다.
+LSP Liskov Substitution 인터페이스를 구현한 구현체가 인터페이스 규약을 지켜야 한다는 원칙
+ISP Interface Segregtion 인터페이스 분리 원칙 -> 인터페이스를 기능에 맞게 적절한 크기로 잘 쪼갠다.
+DIP Dependency Inversion 추상화에 의존해야 함. -> 서비스객체가 인터페이스만 바라봐야 한다. (역할에 집중해라) 
+->  페이징하는 로직을 내가 코드로만 나열했다. 알아 보기도 힘들고, 지저분해졌다. -> 페이징 인터페이스를 만들고 그에 맞게 구현객체를 만들어서
+끼워주는 방식으로 했으면, 다른 방식의 구현방식이 나와도 바꾸는데 큰 노력이 필요하지 않을 것이다.
+
+다형성 만으로는 OCP,DIP를 지킬 수 있다. 뭔가 더 필요하다.
+서비스-> 클라이언트 코드?
+
+모든 설계에 역할과 구현을 구분하자. 
+
+서비스 원 택 원 콜 
+동시성이슈 어쩌구해쉬맵
+
+Alt Insert -> generate getter,setter
+
+given when then
+
+
