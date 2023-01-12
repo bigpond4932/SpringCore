@@ -1,22 +1,20 @@
 package hello.core;
 
-import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.*;
 import hello.core.order.OderServiceImpl;
 import hello.core.order.Order;
 import hello.core.order.OrderService;
 
-import java.util.Arrays;
-
-public class MemberServiceRun {
+public class MemberApp {
     public static void main(String[] args) {
+        // Config 에서 MemberService, OrderService의 인터페이스의 구현체를 정한다.
+        // 구현체(배우)가 바뀌더라도 MemberApp(공연)은 똑같이 진행된다.
+
+        Config config = new Config();
         // MemberSerViceImplとOrderServiceが参照するMemberRepositoryが違うためNullがずっと出てくる
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OderServiceImpl();
 
-
-
+        MemberService memberService = config.memberService();
+        OrderService orderService = config.orderService();
         Member member = new Member(1L, "Hong", Grade.VIP);
         // 加入
         memberService.join(member);

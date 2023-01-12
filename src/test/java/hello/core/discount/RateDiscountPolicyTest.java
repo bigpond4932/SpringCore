@@ -26,6 +26,6 @@ class RateDiscountPolicyTest {
         Member basic_member = new Member(1L,"Basic",Grade.Basic);
         int disCountPrice = discountPolicy.discount(basic_member,10000);
 
-        Assertions.assertEquals(1000,disCountPrice);
+        Assertions.assertEquals(0,disCountPrice);
     }
 }

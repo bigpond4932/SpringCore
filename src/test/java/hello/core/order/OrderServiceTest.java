@@ -1,6 +1,7 @@
 package hello.core.order;
 
 
+import hello.core.Config;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
@@ -9,16 +10,19 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
+    MemberService memberService;
+    OrderService orderService;
+
 
     @Test
     void createOrder(){
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OderServiceImpl();
-
+        Config config = new Config();
+        memberService = config.memberService();
+        orderService = config.orderService();
         Member member = new Member(1L,"HONG", Grade.VIP);
         memberService.join(member);
         Order order = orderService.createOrder(1L,"Shelf",30000);
 
-        Assertions.assertEquals(3000,order.getDiscountPrice());
+        Assertions.assertEquals(1000,order.getDiscountPrice());
     }
 }
