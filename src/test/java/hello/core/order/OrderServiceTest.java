@@ -23,6 +23,6 @@ public class OrderServiceTest {
         memberService.join(member);
         Order order = orderService.createOrder(1L,"Shelf",30000);
 
-        Assertions.assertEquals(1000,order.getDiscountPrice());
+        Assertions.assertEquals(3000,order.getDiscountPrice());
     }
 }

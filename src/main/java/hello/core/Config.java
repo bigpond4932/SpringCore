@@ -1,6 +1,8 @@
 package hello.core;
 
+import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
+import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
@@ -22,10 +24,11 @@ public class Config {
 
 
     public OrderService orderService(){
-        return new OderServiceImpl(memoryMemberRepository(), fixedDiscountPolicy());
+        return new OderServiceImpl(memoryMemberRepository(), discountPolicy());
     }
 
-    private FixDiscountPolicy fixedDiscountPolicy() {
-        return new FixDiscountPolicy();
+    private DiscountPolicy discountPolicy() {
+        return new RateDiscountPolicy();
+        // return new FixedDiscountPolicy();
     }
 }
