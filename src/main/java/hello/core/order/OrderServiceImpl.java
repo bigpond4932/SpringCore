@@ -3,20 +3,30 @@ package hello.core.order;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
+import hello.core.member.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OrderServiceImpl implements OrderService{
     // 会員情報参照
-    MemberRepository memberRepository;
+     private MemberRepository memberRepository;
     //　割引情報参照
-    DiscountPolicy discountPolicy;
+     private DiscountPolicy discountPolicy;
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
+    // setter 주입
+//    @Autowired
+//    public void setMemberRepository(MemberRepository memberRepository){ // SpringContatainer에서 MemberRepository 꺼내서 주입
+//        this.memberRepository = memberRepository;
+//    }
+//    @Autowired
+//    public void setDiscountPolicy(DiscountPolicy discountPolicy){
+//        this.discountPolicy = discountPolicy;
+//    }
 
     // DiscountPolicy discountPolicy = new FixDiscount(); -> DIP, OCP違反
     // DIP Plaes depend on only InterFace
