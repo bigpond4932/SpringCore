@@ -1,5 +1,6 @@
 package hello.core.constructor;
 
+import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
@@ -18,7 +19,7 @@ public class WhyConstructorInjection {
         MemberRepository memberRepository = new MemoryMemberRepository();
         Member Shiori = new Member(1L,"Shiori", Grade.VIP);
         memberRepository.save(Shiori);
-        OrderServiceImpl orderServicerImpl = new OrderServiceImpl(MemberRepository member);
+        OrderServiceImpl orderServicerImpl = new OrderServiceImpl(memberRepository, new FixDiscountPolicy());
         Order order = orderServicerImpl.createOrder(1L,"Shiori",300000);
 
         Assertions.assertThat(order.getItemPrice()).isEqualTo(300000);

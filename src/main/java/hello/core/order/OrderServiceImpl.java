@@ -10,23 +10,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderServiceImpl implements OrderService{
     // 会員情報参照
-     private MemberRepository memberRepository;
+     private final MemberRepository memberRepository;
     //　割引情報参照
-     private DiscountPolicy discountPolicy;
-//    @Autowired
-//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-//        this.memberRepository = memberRepository;
-//        this.discountPolicy = discountPolicy;
-//    }
-    // setter 주입
+     private final DiscountPolicy discountPolicy;
     @Autowired
-    public void setMemberRepository(MemberRepository memberRepository){ // SpringContatainer에서 MemberRepository 꺼내서 주입
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
-    }
-    @Autowired
-    public void setDiscountPolicy(DiscountPolicy discountPolicy){
         this.discountPolicy = discountPolicy;
     }
+    // setter 주입
+//    @Autowired
+//    public void setMemberRepository(MemberRepository memberRepository){ // SpringContatainer에서 MemberRepository 꺼내서 주입
+//        this.memberRepository = memberRepository;
+//    }
+//    @Autowired
+//    public void setDiscountPolicy(DiscountPolicy discountPolicy){
+//        this.discountPolicy = discountPolicy;
+//    }
 
     // DiscountPolicy discountPolicy = new FixDiscount(); -> DIP, OCP違反
     // DIP Plaes depend on only InterFace
