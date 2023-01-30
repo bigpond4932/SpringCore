@@ -33,10 +33,10 @@ public class Config {
     public OrderService orderService(){
 
         System.out.println("Call orderService");
-//        return new OrderServiceImpl(memberRepository(), discountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
         // setter주입시, 객체 성성시 파라미터로 받을 필요 없음.
 //        return new OrderServiceImpl();
-        return null;
+//        return null;
     }
     @Bean
     public DiscountPolicy discountPolicy() {
